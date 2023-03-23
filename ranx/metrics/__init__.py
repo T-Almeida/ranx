@@ -15,6 +15,7 @@ __all__ = [
 ]
 
 from .average_precision import average_precision
+from .average_precision_bioasq import average_precision_bioasq
 from .bpref import bpref
 from .f1 import f1
 from .get_hit_lists import get_hit_lists
@@ -45,6 +46,8 @@ def metric_switch(metric):
         return reciprocal_rank
     elif metric == "map":
         return average_precision
+    elif metric == "map-bioasq":
+        return average_precision_bioasq
     elif metric == "ndcg":
         return ndcg
     elif metric == "ndcg_burges":
